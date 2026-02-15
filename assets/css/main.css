@@ -517,6 +517,10 @@ ul {
   margin-bottom: 0.25rem;
 }
 
+.footer-credit a {
+  color: #999;
+}
+
 .footer-copyright {
   font-size: 0.75rem;
   color: #999;

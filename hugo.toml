@@ -4,8 +4,7 @@ title = 'BlueZ - Official Linux Bluetooth Protocol Stack'
 
 [params]
   description = 'BlueZ is the official Linux Bluetooth protocol stack. It is flexible, efficient and uses a modular implementation.'
-  copyrightYearStart = 2001
-  copyrightYearEnd = 2025
+  copyrightYearStart = 2000
 
 [taxonomies]
 

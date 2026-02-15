@@ -2,7 +2,7 @@
   <div class="container site-footer-inner">
     {{ $logo := resources.Get "images/BlueZ_logo_RGB.svg" }}
     <img src="{{ $logo.RelPermalink }}" alt="BlueZ" class="footer-logo" width="100" height="39">
-    <p class="footer-credit">Branding and website design: createdesign.com</p>
-    <p class="footer-copyright">Copyright &copy; {{ .Site.Params.copyrightYearStart }}-{{ .Site.Params.copyrightYearEnd }} BlueZ Project. All Rights Reserved. Privacy Notice.</p>
+    <p class="footer-credit">Branding and website design: <a href="https://jonwallacedesign.com">jonwallacedesign.com</a></p>
+    <p class="footer-copyright">Copyright &copy; {{ .Site.Params.copyrightYearStart }}-{{ now.Year }} BlueZ Project. All Rights Reserved.</p>
   </div>
 </footer>
