@@ -1,0 +1,28 @@
+<section class="news" id="news">
+  <div class="container">
+    <h2>Latest news</h2>
+    <div class="news-grid">
+      {{ $news := where .Site.RegularPages "Section" "news" }}
+      {{ $news = sort $news "Date" "desc" }}
+      {{ range first 3 $news }}
+        <article class="news-card">
+          {{ with .Params.image }}
+            {{ $img := resources.Get . }}
+            {{ if $img }}
+              <div class="news-card-image">
+                <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}" loading="lazy">
+              </div>
+            {{ else }}
+              <div class="news-card-image"></div>
+            {{ end }}
+          {{ else }}
+            <div class="news-card-image"></div>
+          {{ end }}
+          <h3>{{ .Title }}</h3>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+          <p>{{ .Params.summary }}</p>
+        </article>
+      {{ end }}
+    </div>
+  </div>
+</section>

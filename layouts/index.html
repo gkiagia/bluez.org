@@ -1,0 +1,12 @@
+{{ define "main" }}
+  {{- partial "header.html" . -}}
+  <main>
+    {{- partial "hero.html" . -}}
+    {{- partial "features.html" . -}}
+    {{- partial "modules.html" . -}}
+    {{- partial "profiles.html" . -}}
+    {{- partial "news.html" . -}}
+    {{- partial "footer-links.html" . -}}
+  </main>
+  {{- partial "footer.html" . -}}
+{{ end }}

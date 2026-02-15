@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ .Site.Title }}</title>
+<meta name="description" content="{{ .Site.Params.description }}">
+
+{{/* Preload font */}}
+{{ $font := resources.Get "fonts/figtree-latin.woff2" }}
+{{ with $font }}
+<link rel="preload" href="{{ .RelPermalink }}" as="font" type="font/woff2" crossorigin>
+{{ end }}
+
+{{/* CSS via Hugo Pipes */}}
+{{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
+
+{{/* Favicon */}}
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">

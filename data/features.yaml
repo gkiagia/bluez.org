@@ -1,0 +1,8 @@
+items:
+  - "Complete modular implementation"
+  - "Symmetric multi processing safe"
+  - "Multithreaded data processing"
+  - "Support for multiple Bluetooth devices"
+  - "Real hardware abstraction"
+  - "Standard socket interface to all layers"
+  - "Device and service level security support"

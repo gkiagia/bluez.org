@@ -1,0 +1,577 @@
+/* ========================================
+   1. FONT FACES
+   ======================================== */
+
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('../fonts/figtree-latin.woff2') format('woff2');
+}
+
+/* ========================================
+   2. CSS CUSTOM PROPERTIES
+   ======================================== */
+
+:root {
+  --color-dark-blue: #0039cf;
+  --color-light-blue: #0064fc;
+  --color-black: #000000;
+  --color-grey: #333333;
+  --color-white: #ffffff;
+  --color-light-grey-bg: #f0f0f0;
+  --color-dark-bg: #1a1a1a;
+
+  --gradient-blue: linear-gradient(180deg, var(--color-light-blue) 0%, var(--color-dark-blue) 100%);
+
+  --font-family: 'Figtree', system-ui, -apple-system, sans-serif;
+
+  --container-max-width: 1140px;
+  --container-padding: 1.5rem;
+
+  --section-padding-y: 70px;
+
+  --letter-spacing: -0.01em;
+}
+
+/* ========================================
+   3. RESET / BASE
+   ======================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-black);
+  letter-spacing: var(--letter-spacing);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  line-height: 1.2;
+  letter-spacing: var(--letter-spacing);
+}
+
+p {
+  margin-top: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-light-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: disc;
+  padding-left: 1.25em;
+}
+
+/* ========================================
+   4. LAYOUT UTILITIES
+   ======================================== */
+
+.container {
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* ========================================
+   5. HEADER
+   ======================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-white);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 64px;
+}
+
+.header-logo img {
+  width: 120px;
+  height: auto;
+}
+
+/* Hamburger toggle (CSS-only) */
+.nav-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  right: var(--container-padding);
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 110;
+  padding: 4px;
+}
+
+.nav-toggle-label span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-black);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--color-white);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  border-bottom: 1px solid var(--color-light-grey-bg);
+}
+
+.nav-menu a {
+  display: block;
+  padding: 12px 24px;
+  color: var(--color-black);
+  font-weight: 500;
+  font-size: 0.9375rem;
+}
+
+.nav-menu a:hover {
+  background: var(--color-light-grey-bg);
+  text-decoration: none;
+}
+
+.nav-toggle:checked ~ .nav-menu {
+  max-height: 400px;
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ========================================
+   6. HERO
+   ======================================== */
+
+.hero {
+  background: var(--gradient-blue);
+  padding: 80px 0;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.hero h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  opacity: 0.95;
+}
+
+/* ========================================
+   7. FEATURES
+   ======================================== */
+
+.features {
+  background: var(--color-white);
+  padding: var(--section-padding-y) 0;
+}
+
+.features-inner {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.features-description {
+  flex: 3;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.features-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.features-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.features-description p {
+  margin-bottom: 0;
+  color: var(--color-black);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  text-align: right;
+}
+
+.features-list {
+  flex: 2;
+}
+
+.features-list ul {
+  margin: 0;
+  padding-left: 1.25em;
+}
+
+.features-list li {
+  color: var(--color-grey);
+  font-size: 0.9375rem;
+  margin-bottom: 0.35rem;
+}
+
+/* ========================================
+   8. MODULES
+   ======================================== */
+
+.modules {
+  background-color: var(--color-grey);
+  padding: var(--section-padding-y) 0;
+  color: var(--color-white);
+}
+
+.modules h2 {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.modules .highlight {
+  color: var(--color-light-blue);
+  font-weight: 600;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2rem;
+}
+
+.module-card {
+  border-left: 3px solid var(--color-light-blue);
+  padding: 1rem;
+}
+
+.module-card p {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+/* ========================================
+   9. PROFILES
+   ======================================== */
+
+.profiles {
+  background: var(--color-white);
+  padding: var(--section-padding-y) 0;
+}
+
+.profiles h2 {
+  text-align: center;
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.profiles-sub {
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--color-grey);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.profile-table {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 16px;
+  background: #f5f5f5;
+}
+
+.profile-table h3 {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.profile-table ul {
+  list-style: disc;
+  padding-left: 1.25em;
+  margin: 0;
+  columns: 2;
+}
+
+.profile-table li {
+  font-size: 0.8125rem;
+  color: var(--color-grey);
+  margin-bottom: 0.2rem;
+}
+
+/* ========================================
+   10. NEWS
+   ======================================== */
+
+.news {
+  background: var(--gradient-blue);
+  color: var(--color-white);
+  padding: var(--section-padding-y) 0;
+}
+
+.news h2 {
+  text-align: center;
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.news-card-image {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  background: var(--color-white);
+}
+
+.news-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.news-card time {
+  display: block;
+  font-size: 0.75rem;
+  color: #999;
+  margin-bottom: 0.5rem;
+}
+
+.news-card p {
+  font-size: 0.8125rem;
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* ========================================
+   11. FOOTER LINKS
+   ======================================== */
+
+.footer-links {
+  background: var(--color-white);
+  padding: var(--section-padding-y) 0;
+}
+
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer-link-col h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-black);
+  margin-bottom: 0.75rem;
+}
+
+.footer-link-col p {
+  font-size: 0.8125rem;
+  color: var(--color-grey);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.footer-link-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-light-blue);
+}
+
+.footer-link-action svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* ========================================
+   12. BOTTOM FOOTER
+   ======================================== */
+
+.site-footer {
+  background: var(--color-light-grey-bg);
+  padding: 40px 0;
+  text-align: center;
+  border-bottom: 4px solid var(--color-light-blue);
+}
+
+.footer-logo {
+  width: 100px;
+  height: auto;
+  margin: 0 auto 1rem;
+}
+
+.footer-credit {
+  font-size: 0.75rem;
+  color: #999;
+  margin-bottom: 0.25rem;
+}
+
+.footer-copyright {
+  font-size: 0.75rem;
+  color: #999;
+  margin-bottom: 0;
+}
+
+/* ========================================
+   13. RESPONSIVE
+   ======================================== */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+/* Tablet */
+@media (max-width: 960px) {
+  .modules-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .profiles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  :root {
+    --section-padding-y: 40px;
+    --container-padding: 1rem;
+  }
+
+  .hero {
+    padding: 50px 0;
+  }
+
+  .hero h1 {
+    font-size: 1.375rem;
+  }
+
+  .hero p {
+    font-size: 0.875rem;
+  }
+
+  .features-inner {
+    flex-direction: column;
+  }
+
+  .modules-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profiles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: 1fr;
+  }
+}

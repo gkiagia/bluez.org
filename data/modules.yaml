@@ -1,0 +1,8 @@
+items:
+  - "Bluetooth kernel subsystem core"
+  - "L2CAP and SCO audio kernel layers"
+  - "RFCOMM, BNEP, CMTP and HID kernel implementations"
+  - "HCI UART, USB, PCMCIA and virtual device drivers"
+  - "General Bluetooth and SDP libraries and daemon"
+  - "Configuration and testing utilities"
+  - "Protocol decoding and analysis tools"

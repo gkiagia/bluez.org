@@ -1,0 +1,19 @@
+<section class="profiles" id="profiles">
+  <div class="container">
+    <h2>Supported Profiles</h2>
+    <p class="profiles-sub"><strong>Lower level Host Stack:</strong> Core specification 4.2, Not (yet) 3.0+HS.<br>
+       Includes GAP, L2CAP, RFCOMM and SDP.</p>
+    <div class="profiles-grid">
+      {{ range .Site.Data.profiles.categories }}
+        <div class="profile-table">
+          <h3>{{ .name }}</h3>
+          <ul>
+            {{ range .items }}
+              <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

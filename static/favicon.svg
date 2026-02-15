@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Z" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 364.9542967326 389.949472352">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #0039cf;
+      }
+
+      .cls-4 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" width="364.9542967326" height="389.949472352"/>
+    </clipPath>
+  </defs>
+  <g id="Z-2" data-name="Z">
+    <g id="Z_clip" data-name="Z clip">
+      <g class="cls-4">
+        <g>
+          <rect class="cls-3" width="364.9542967326" height="389.949472352"/>
+          <polygon class="cls-2" points="178.3380393053 271.1942392187 288.0758482158 61.441340831 101.4872200544 61.441340831 71.4140771498 118.755163929 186.6162574273 118.755163929 76.8784485168 328.508131521 263.4670766782 328.508131521 293.5402195828 271.1942392187 178.3380393053 271.1942392187"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

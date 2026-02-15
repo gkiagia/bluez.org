@@ -1,0 +1,27 @@
+categories:
+  - name: "Profiles: BlueZ"
+    items:
+      - "A2DP 1.3"
+      - "AVRCP 1.5"
+      - "DI 1.3"
+      - "HDP 1.0"
+      - "HID 1.0"
+      - "PAN 1.0"
+      - "SPP 1.1"
+  - name: "Profiles: GATT (LE)"
+    items:
+      - "PXP 1.0"
+      - "HTP 1.0"
+      - "TIP 1.0"
+      - "CSCP 1.0"
+      - "FMG 1.0"
+  - name: "Profiles: OBEX"
+    items:
+      - "FTP 1.3"
+      - "OPP 1.1"
+      - "IMAP 1.1"
+      - "MAP 1.0"
+      - "PBAP 1.1"
+  - name: "Profile: oFono project"
+    items:
+      - "HFP 1.6 (AG & HF)"

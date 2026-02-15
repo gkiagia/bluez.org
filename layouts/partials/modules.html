@@ -1,0 +1,12 @@
+<section class="modules" id="modules">
+  <div class="container">
+    <h2>Currently <span class="highlight">BlueZ</span> consists of many separate modules:</h2>
+    <div class="modules-grid">
+      {{ range .Site.Data.modules.items }}
+        <div class="module-card">
+          <p>{{ . }}</p>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

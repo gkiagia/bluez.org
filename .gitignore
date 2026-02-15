@@ -1,0 +1,4 @@
+# Hugo's output directory
+public/
+# Hugo's build lock
+.hugo_build.lock
