@@ -23,12 +23,12 @@
         {{ end }}
 
         {{ .Content }}
+
+        <div class="newsIndexLoadMoreWrapper backToNewsBtnWrapper">
+          <a href="/news/" title="Back to News">Back to news</a>
+        </div>
       </div>
     </section>
-
-    <div class="newsIndexLoadMoreWrapper backToNewsBtnWrapper">
-      <a href="/news/" title="Back to News">Back to News</a>
-    </div>
 
     {{ $related := where (where .Site.RegularPages "Section" "news") ".Permalink" "ne" .Permalink }}
     {{ $related = sort $related "Date" "desc" }}
