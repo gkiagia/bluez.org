@@ -1,0 +1,43 @@
+{{ define "main" }}
+  {{- partial "header.html" . -}}
+  <main>
+    <section class="hero contentHero">
+      <div class="container">
+        <h1>{{ .Title }}</h1>
+      </div>
+    </section>
+
+    <section class="news newsIndex" id="news">
+      <div class="container">
+        <div class="news-grid">
+          {{ $news := sort .Pages "Date" "desc" }}
+          {{ range $news }}
+            <article class="news-card">
+              <a href="{{ .Permalink }}" title="{{ .Title }}">
+              {{ with .Params.image }}
+                {{ $img := resources.Get . }}
+                {{ if $img }}
+                  <div class="news-card-image">
+                    <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}" loading="lazy">
+                  </div>
+                {{ else }}
+                  <div class="news-card-image"></div>
+                {{ end }}
+              {{ else }}
+                <div class="news-card-image"></div>
+              {{ end }}
+              <h3>{{ .Title }}</h3>
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+              <p>{{ .Params.summary }}</p>
+              </a>
+            </article>
+          {{ end }}
+        </div>
+      </div>
+      <div class="newsIndexSeparator"></div>
+    </section>
+
+    {{- partial "footer-links.html" . -}}
+  </main>
+  {{- partial "footer.html" . -}}
+{{ end }}

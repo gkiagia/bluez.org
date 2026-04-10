@@ -1,0 +1,69 @@
+{{ define "main" }}
+  {{- partial "header.html" . -}}
+  <main>
+    <section class="hero contentHero">
+      <div class="container">
+        <h1>{{ .Title }}</h1>
+      </div>
+    </section>
+
+    <section class="newsArticleBody">
+      <div class="container">
+        <div class="newsArticleDateWrapper">
+          <p>{{ .Date.Format "2 January 2006" }}</p>
+        </div>
+
+        {{ with .Params.image }}
+          {{ $img := resources.Get . }}
+          {{ if $img }}
+            <div class="heroIMG">
+              <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}">
+            </div>
+          {{ end }}
+        {{ end }}
+
+        {{ .Content }}
+      </div>
+    </section>
+
+    <div class="newsIndexLoadMoreWrapper backToNewsBtnWrapper">
+      <a href="/news/" title="Back to News">Back to News</a>
+    </div>
+
+    {{ $related := where (where .Site.RegularPages "Section" "news") ".Permalink" "ne" .Permalink }}
+    {{ $related = sort $related "Date" "desc" }}
+    {{ $related = first 3 $related }}
+    {{ if $related }}
+    <section class="news newsArticleFeedWrapper">
+      <div class="container">
+        <div class="news-grid">
+          {{ range $related }}
+            <article class="news-card">
+              <a href="{{ .Permalink }}" title="{{ .Title }}">
+              {{ with .Params.image }}
+                {{ $img := resources.Get . }}
+                {{ if $img }}
+                  <div class="news-card-image">
+                    <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}" loading="lazy">
+                  </div>
+                {{ else }}
+                  <div class="news-card-image"></div>
+                {{ end }}
+              {{ else }}
+                <div class="news-card-image"></div>
+              {{ end }}
+              <h3>{{ .Title }}</h3>
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+              <p>{{ .Params.summary }}</p>
+              </a>
+            </article>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+    {{ end }}
+
+    {{- partial "footer-links.html" . -}}
+  </main>
+  {{- partial "footer.html" . -}}
+{{ end }}
