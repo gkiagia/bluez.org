@@ -1,11 +1,12 @@
 <section class="news" id="news">
   <div class="container">
-    <h2>Latest news</h2>
+    <h2><a href="/news/" title="Latest news">Latest news</a></h2>
     <div class="news-grid">
       {{ $news := where .Site.RegularPages "Section" "news" }}
       {{ $news = sort $news "Date" "desc" }}
       {{ range first 3 $news }}
         <article class="news-card">
+          <a href="{{ .Permalink }}" title="{{ .Title }}">
           {{ with .Params.image }}
             {{ $img := resources.Get . }}
             {{ if $img }}
@@ -21,6 +22,7 @@
           <h3>{{ .Title }}</h3>
           <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
           <p>{{ .Params.summary }}</p>
+          </a>
         </article>
       {{ end }}
     </div>
