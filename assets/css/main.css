@@ -1088,6 +1088,42 @@ a.footer-link-action:hover {
   border-top: 1px solid #eaeaea;
 }
 
+.newsIndexPagination {
+  width: 100%;
+  margin: 100px 0 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.newsIndexPagination::before {
+  content: '';
+  width: 100%;
+  border-top: 1px solid #eaeaea;
+  position: absolute;
+  left: 0;
+  top: 28px;
+}
+.newsIndexPagination-btn {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-black);
+  text-align: center;
+  border: 1px solid #eaeaea;
+  padding: 16px 45px;
+  background: #fff;
+  z-index: 1;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+.newsIndexPagination-btn:hover {
+  background-color: var(--color-dark-blue);
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
 @media only screen and (max-width: 500px) {
   .news.newsIndex .container {
     padding-left: 10px;

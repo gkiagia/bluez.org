@@ -10,8 +10,8 @@
     <section class="news newsIndex" id="news">
       <div class="container">
         <div class="news-grid">
-          {{ $news := sort .Pages "Date" "desc" }}
-          {{ range $news }}
+          {{ $paginator := .Paginate (sort .Pages "Date" "desc") }}
+          {{ range $paginator.Pages }}
             <article class="news-card">
               <a href="{{ .Permalink }}" title="{{ .Title }}">
               {{ with .Params.image }}
@@ -34,7 +34,18 @@
           {{ end }}
         </div>
       </div>
+      {{ if gt $paginator.TotalPages 1 }}
+      <nav class="newsIndexPagination" aria-label="News pagination">
+        {{ if $paginator.HasPrev }}
+          <a href="{{ $paginator.Prev.URL }}" class="newsIndexPagination-btn" title="Newer articles">&larr; Newer</a>
+        {{ end }}
+        {{ if $paginator.HasNext }}
+          <a href="{{ $paginator.Next.URL }}" class="newsIndexPagination-btn" title="Older articles">Older &rarr;</a>
+        {{ end }}
+      </nav>
+      {{ else }}
       <div class="newsIndexSeparator"></div>
+      {{ end }}
     </section>
 
     {{- partial "footer-links.html" . -}}
