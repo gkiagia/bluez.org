@@ -1212,6 +1212,42 @@ a.footer-link-action:hover {
   word-break: break-word;
 }
 
+/* Fenced code blocks (Hugo/Chroma output: .highlight > pre > code) */
+.newsArticleBody .highlight {
+  margin-bottom: 1em;
+}
+.newsArticleBody .highlight pre {
+  padding: 20px;
+  border: 1px solid #eaeaea;
+  margin: 0;
+  overflow-x: auto;
+}
+.newsArticleBody pre {
+  font-family: "Source Code Pro", Courier, 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 150%;
+  padding: 20px;
+  border: 1px solid #eaeaea;
+  overflow-x: auto;
+  margin: 0 0 1em;
+}
+.newsArticleBody pre code {
+  display: block;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+/* Cite element (appears after blockquotes) */
+.newsArticleBody cite {
+  display: block;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--color-grey);
+  margin-top: 8px;
+  margin-bottom: 15px;
+  padding-left: 33px;
+}
+
 /* Article responsive */
 @media only screen and (max-width: 1250px) {
   .newsArticleBody {
@@ -1247,6 +1283,14 @@ a.footer-link-action:hover {
     margin: 20px 0 25px;
   }
   .newsArticleBody code span {
+    font-size: 13px;
+  }
+  .newsArticleBody .highlight pre,
+  .newsArticleBody pre {
+    padding: 15px;
+    font-size: 13px;
+  }
+  .newsArticleBody pre code {
     font-size: 13px;
   }
 }

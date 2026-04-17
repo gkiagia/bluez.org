@@ -12,6 +12,8 @@ title = 'BlueZ - Official Linux Bluetooth Protocol Stack'
 [taxonomies]
 
 [markup]
+  [markup.highlight]
+    codeFences = false
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
