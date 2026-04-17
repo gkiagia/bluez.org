@@ -10,7 +10,7 @@
     <section class="news newsIndex" id="news">
       <div class="container">
         <div class="news-grid">
-          {{ $paginator := .Paginate (sort .Pages "Date" "desc") }}
+          {{ $paginator := .Paginate (sort .RegularPagesRecursive "Date" "desc") }}
           {{ range $paginator.Pages }}
             <article class="news-card">
               <a href="{{ .Permalink }}" title="{{ .Title }}">
