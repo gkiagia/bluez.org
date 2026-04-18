@@ -1,6 +1,6 @@
 <section class="footer-links" id="download">
   <div class="container footer-links-grid">
-    {{ range .Site.Data.footer_links.columns }}
+    {{ range (hugo.Data).footer_links.columns }}
       <div class="footer-link-col">
         <h3>{{ .heading }}</h3>
         <p>{{ .description }}</p>

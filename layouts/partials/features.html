@@ -5,7 +5,7 @@
     </div>
     <div class="features-list">
       <ul>
-        {{ range .Site.Data.features.items }}
+        {{ range (hugo.Data).features.items }}
           <li>{{ . }}</li>
         {{ end }}
       </ul>
