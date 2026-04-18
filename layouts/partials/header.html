@@ -1,7 +1,7 @@
 <header class="site-header">
   <div class="container header-inner">
     {{ $logo := resources.Get "images/BlueZ_logo_RGB.svg" }}
-    <a href="/" class="header-logo">
+    <a href="{{ "/" | relURL }}" class="header-logo">
       <img src="{{ $logo.RelPermalink }}" alt="BlueZ" title="BlueZ">
     </a>
   </div>

@@ -1,6 +1,6 @@
 <section class="news" id="news">
   <div class="container">
-    <h2><a href="/news/" title="Latest news">Latest news</a></h2>
+    <h2><a href="{{ "news/" | relURL }}" title="Latest news">Latest news</a></h2>
     <div class="news-grid">
       {{ $news := where .Site.RegularPages "Section" "news" }}
       {{ $news = sort $news "Date" "desc" }}
