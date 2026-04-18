@@ -1,3 +1,5 @@
 ---
 title: "BlueZ - Official Linux Bluetooth Protocol Stack"
+heroTitle: "Official Linux Bluetooth Protocol Stack"
+heroText: "The Bluetooth wireless technology is a worldwide specification for a small-form factor, low-cost radio solution that provides links between mobile computers, mobile phones, other portable handheld devices, and connectivity to the Internet. The specification is developed, published and promoted by the Bluetooth Special Interest Group (SIG)."
 ---

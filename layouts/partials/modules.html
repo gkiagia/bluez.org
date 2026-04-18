@@ -1,6 +1,6 @@
 <section class="modules" id="modules">
   <div class="container">
-    <h2>Currently <span class="highlight">BlueZ</span> consists of many separate modules:</h2>
+    <h2>{{ (hugo.Data).modules.heading | markdownify | replaceRE "^<p>(.*)</p>\n?$" "$1" | safeHTML }}</h2>
     <div class="modules-grid">
       {{ range (hugo.Data).modules.items }}
         <div class="module-card">

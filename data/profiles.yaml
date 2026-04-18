@@ -1,3 +1,5 @@
+heading: "Supported Profiles"
+intro: "**Lower level Host Stack:** Core specification 4.2, Not (yet) 3.0+HS. Includes GAP, L2CAP, RFCOMM and SDP."
 categories:
   - name: "Profiles: BlueZ"
     items:

@@ -468,7 +468,8 @@ ul {
   margin-bottom: 2rem;
 }
 
-.modules .highlight {
+.modules .highlight,
+.modules h2 strong {
   color: var(--color-light-blue);
   font-weight: 600;
 }

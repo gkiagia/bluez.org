@@ -1,3 +1,4 @@
+heading: "Currently **BlueZ** consists of many separate modules:"
 items:
   - "Bluetooth kernel subsystem core"
   - "L2CAP and SCO audio kernel layers"
